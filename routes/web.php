@@ -58,6 +58,12 @@ Route::get('/create-order2-form', function () {
 Route::get('/user-table', function () {
     return view('admin.users.user_table');
 });
+Route::get('/product-list', function () {
+    return view('admin.products.product_list');
+});
+Route::get('/user-list', function () {
+    return view('admin.users.user_list');
+});
 
  
 Auth::routes();

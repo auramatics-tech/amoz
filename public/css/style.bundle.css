@@ -71,13 +71,30 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent
 }
-
+/* admin panel css start */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+ td{
+   text-align: left;
+    padding: 10px 8px;
+  }
+  th{
+    text-align: center;
+    padding: 10px 8px;
+  }
 .login_bg{
     background-image: url(../images/portal_bg_image.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
+
+
+
+/* admin panel css end */
 
 hr {
     margin: 1rem 0;
