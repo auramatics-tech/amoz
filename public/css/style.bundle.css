@@ -72,6 +72,13 @@ body {
     -webkit-tap-highlight-color: transparent
 }
 
+.login_bg{
+    background-image: url(../images/portal_bg_image.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -49800,9 +49807,6 @@ body {
 
 .aside-light .menu .menu-title {
     font-weight: 500
-}
-.login_bg{
-    background-image: url(../images/portal_bg_image.jpg);
 }
 
 @media (min-width:992px) {

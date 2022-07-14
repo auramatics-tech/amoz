@@ -35,25 +35,25 @@ Route::get('/user-form', function () {
     return view('admin.users.user');
 });
 Route::get('/create-order-form', function () {
-    return view('admin.users.create_order');
+    return view('admin.orders.create_order');
 });
 Route::get('/create-product-form', function () {
     return view('admin.users.create_product');
 });
 Route::get('/edit-order-form', function () {
-    return view('admin.users.edit_order');
+    return view('admin.orders.edit_order');
 });
-Route::get('/portal-login-form', function () {
-    return view('admin.users.portal_login');
+Route::get('/login-form', function () {
+    return view('admin.portal_login');
 });
 Route::get('/user-detail-form', function () {
     return view('admin.users.user_detail');
 });
 Route::get('/create-order1-form', function () {
-    return view('admin.users.create_order1');
+    return view('admin.orders.create_order1');
 });
 Route::get('/create-order2-form', function () {
-    return view('admin.users.create_order2');
+    return view('admin.orders.create_order2');
 });
 Route::get('/user-table', function () {
     return view('admin.users.user_table');

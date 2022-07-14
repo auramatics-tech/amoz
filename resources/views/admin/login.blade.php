@@ -1,17 +1,16 @@
 @extends('admin.layouts.master')
 @section('css')
 <style>
-	.aside-enabled.aside-fixed .wrapper {
+	/* .aside-enabled.aside-fixed .wrapper {
     padding-left: 0px !important;
 }
 .header-fixed.toolbar-fixed .wrapper {
     padding-top: auto !important;
-}
+} */
 </style>
 @endsection
 @section('content')
-<main class="bg_image">
-<div class="d-flex justify-content-center m-lg-auto w-100">
+<main class="d-flex justify-content-center m-lg-auto w-100">
 	<form action="" method="" id="" class="form p-5 bg-white rounded" action="#">
 		<!--begin::Heading-->
 		<div class="mb-10 text-center">
@@ -35,7 +34,6 @@
 			</button>
 		</div>
 	</form>
-</div>
 </main>
 @endsection
 @section('script')
