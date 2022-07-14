@@ -25,8 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function agent_form(){
-        echo "here";die;
-        return view('admin.users.agent');
-    }
 }
