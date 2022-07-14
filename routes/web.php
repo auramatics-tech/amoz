@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-Route::get('/admin', function () {
+Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 Route::get('/agent-form', function () {
@@ -44,7 +44,7 @@ Route::get('/edit-order-form', function () {
     return view('admin.orders.edit_order');
 });
 Route::get('/login-form', function () {
-    return view('admin.portal_login');
+    return view('admin.login');
 });
 Route::get('/user-detail-form', function () {
     return view('admin.users.user_detail');

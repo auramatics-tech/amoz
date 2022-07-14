@@ -1,3 +1,4 @@
+{{--
 @extends('layouts.app')
 
 @section('content')
@@ -70,4 +71,53 @@
         </div>
     </div>
 </div>
+@endsection
+--}}
+@extends('admin.layouts.master')
+@section('css')
+<style>
+	/* .aside-enabled.aside-fixed .wrapper {
+    padding-left: 0px !important;
+}
+.header-fixed.toolbar-fixed .wrapper {
+    padding-top: auto !important;
+} */
+</style>
+@endsection
+
+@section('content')
+<main class="d-flex justify-content-center m-lg-auto w-100">
+	<form method="POST" id="" class="form p-5 bg-white rounded" action="{{ route('login') }}">
+    @csrf
+		<!--begin::Heading-->
+		<div class="mb-10 text-center">
+			<h1 class="mb-3">Portal login</h1>
+		</div>
+		<div class="d-flex flex-column mb-8 fv-row">
+			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+				<span class="required">Email</span>
+			</label>
+            <input id="email" type="email" class="form-control form-control-solid @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+		<div class="d-flex flex-column mb-8 fv-row">
+			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+				<span class="required">Password</span>
+			</label>
+            <input id="password" type="password" class="form-control form-control-solid @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+		
+		</div>
+		<div class="text-center">
+			<button type="submit" id="" class=" w-100 btn btn-primary">
+				<span class="indicator-label">Login</span>
+			</button>
+		</div>
+	</form>
+</main>
+@endsection
+@section('script')
 @endsection
