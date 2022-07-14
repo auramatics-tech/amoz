@@ -8,19 +8,19 @@
             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                 <span class="required">Product name</span>
             </label>
-            <input type="text" class="form-control form-control-solid" placeholder="Enter name" name="name" />
+            <input type="text" class="form-control form-control-solid" placeholder="" name="name" />
         </div>
         <div class="d-flex flex-column mb-8 fv-row">
             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                 <span class="required">Price</span>
             </label>
-            <input type="text" class="form-control form-control-solid" placeholder="Enter email" name="email" />
+            <input type="text" class="form-control form-control-solid" placeholder="" name="email" />
         </div>
         <div class="d-flex flex-column mb-8 fv-row">
             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                 <span class="required">Remarks</span>
             </label>
-        <textarea name="" id="" cols="" rows="10" class="w-100 form-control form-control-solid"></textarea>
+            <textarea name="" id="" cols="" rows="10" class="w-100 form-control form-control-solid"></textarea>
         </div>
         <div class="d-flex justify-content-between">
             <button type="submit" id="" class="btn btn-primary">

@@ -64,6 +64,12 @@ Route::get('/product-list', function () {
 Route::get('/user-list', function () {
     return view('admin.users.user_list');
 });
+Route::get('/order-list', function () {
+    return view('admin.orders.order_list');
+});
+Route::get('/multi-step', function () {
+    return view('admin.orders.multi_step');
+});
 
  
 Auth::routes();

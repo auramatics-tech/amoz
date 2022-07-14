@@ -38,6 +38,8 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <!--end::Global Stylesheets Bundle-->
     @yield('css')
 </head>
@@ -86,6 +88,13 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
     @yield('scripts')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav_btn').click(function () {
+                $('.mobile_nav_items').toggleClass('active');
+            });
+        });
+    </script>
 </body>
 @else
 <body class="login_bg">
