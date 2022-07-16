@@ -30,6 +30,7 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.rtl.min.css" />
     <!--end::Fonts-->
     <!--begin::Page Vendor Stylesheets(used by this page)-->
     <link href="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
@@ -38,8 +39,6 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{asset('plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <!--end::Global Stylesheets Bundle-->
     @yield('css')
 </head>
@@ -88,13 +87,6 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
     @yield('scripts')
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.nav_btn').click(function () {
-                $('.mobile_nav_items').toggleClass('active');
-            });
-        });
-    </script>
 </body>
 @else
 <body class="login_bg">

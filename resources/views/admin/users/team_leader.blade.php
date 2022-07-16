@@ -2,8 +2,8 @@
 @section('css')
 @endsection
 @section('content')
-<main class="px-5 py-4">
-	<form action="" method="" id="" class="form p-5 bg-white" action="#">
+<main class="px-10 py-10">
+<form action="" method="" id="" class="form p-5 bg-white" action="#">
 		<!--begin::Heading-->
 		<div class="mb-10 text-left">
 			<h1 class="mb-3">Users Details</h1>

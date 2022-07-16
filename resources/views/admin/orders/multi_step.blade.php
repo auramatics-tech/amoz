@@ -2,7 +2,7 @@
 @section('css')
 @endsection
 @section('content')
-<main class="px-5 py-4">
+<main class="px-10 py-10">
     <div class="form p-5 bg-white rounded">
     <form class="p-3">
   <div class="form-group">

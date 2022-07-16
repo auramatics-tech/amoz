@@ -2,11 +2,11 @@
 @section('css')
 @endsection
 @section('content')
-<main class="px-5 py-4">
-    <div class="mb-10 mt-5">
-        <button type="submit" id="" class="d-flex btn btn-primary si_margin_left">
-            <span class="indicator-label">Add User</span>
-        </button>
+<main class="px-10 py-10">
+    <div class="mb-10 mt-2">
+        <a href="{{route('user_details')}}"><button type="submit" id="" class="d-flex btn btn-primary ml-auto">
+                <span class="indicator-label">Add User</span>
+            </button></a>
     </div>
     <div class="form p-5 bg-white rounded">
         <h5 class="py-4">User Overview</h5>
