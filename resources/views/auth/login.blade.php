@@ -9,7 +9,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" class="ved">
                         @csrf
 
                         <div class="row mb-3">
@@ -87,7 +87,7 @@
 
 @section('content')
 <main class="d-flex justify-content-center m-lg-auto w-100">
-	<form method="POST" id="" class="form p-5 bg-white rounded" action="{{ route('login') }}">
+	<form method="POST" id="" class="form p-5 w-25 bg-white rounded ved" action="{{ route('login') }}">
     @csrf
 		<!--begin::Heading-->
 		<div class="mb-10 text-center">

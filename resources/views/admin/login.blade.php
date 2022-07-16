@@ -1,22 +1,14 @@
 @extends('admin.layouts.master')
 @section('css')
-<style>
-	/* .aside-enabled.aside-fixed .wrapper {
-    padding-left: 0px !important;
-}
-.header-fixed.toolbar-fixed .wrapper {
-    padding-top: auto !important;
-} */
-</style>
 @endsection
 @section('content')
-<main class="d-flex justify-content-center m-lg-auto w-100">
-	<form action="" method="" id="" class="form p-5 bg-white rounded" action="#">
-		<!--begin::Heading-->
-		<div class="mb-10 text-center">
+<main class="d-flex justify-content-center m-lg-auto">
+<div class="mb-10 text-center">
 			<h1 class="mb-3">Portal login</h1>
 		</div>
-		<div class="d-flex flex-column mb-8 fv-row">
+	<form action="" method="" id="" class="form p-5 bg-white rounded w-25" action="#">
+		<!--begin::Heading-->
+	<div class="d-flex flex-column mb-8 fv-row">
 			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 				<span class="required">Email</span>
 			</label>

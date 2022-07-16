@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +42,7 @@ Route::get('/create-order-form', function () {
     return view('admin.orders.create_order');
 });
 Route::get('/create-product-form', function () {
-    return view('admin.users.create_product');
+    return view('admin.products.create_product');
 });
 Route::get('/edit-order-form', function () {
     return view('admin.orders.edit_order');
@@ -55,11 +59,34 @@ Route::get('/create-order1-form', function () {
 Route::get('/create-order2-form', function () {
     return view('admin.orders.create_order2');
 });
-Route::get('/user-table', function () {
-    return view('admin.users.user_table');
+
+Route::get('/product-list', function () {
+    return view('admin.products.product_list');
+});
+Route::get('/user-list', function () {
+    return view('admin.users.user_list');
+});
+Route::get('/order-list', function () {
+    return view('admin.orders.order_list');
+});
+Route::get('/multi-step', function () {
+    return view('admin.orders.multi_step');
 });
 
  
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/create-order', [App\Http\Controllers\OrdersController::class, 'create_order'])->name('create_order');
+Route::get('/order-list', [App\Http\Controllers\OrdersController::class, 'order_list'])->name('order_list');
+
+Route::get('/product-list', [App\Http\Controllers\ProductsController::class, 'product_list'])->name('product_list');
+Route::get('/create-product', [App\Http\Controllers\ProductsController::class, 'create_product'])->name('create_product');
+
+Route::get('/user-list', [App\Http\Controllers\UsersController::class, 'user_list'])->name('user_list');
+Route::get('/user-details', [App\Http\Controllers\UsersController::class, 'user_details'])->name('user_details');
+
+Route::get('/export-invoice', [App\Http\Controllers\InvoiceController::class, 'export_invoice'])->name('export_invoice');
+Route::get('/invoice-list', [App\Http\Controllers\InvoiceController::class, 'invoice_list'])->name('invoice_list');

@@ -71,13 +71,176 @@ body {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent
 }
-
+/* admin panel css start */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+ td{
+   text-align: left;
+    padding: 10px 8px;
+  }
+  th{
+    text-align: center;
+    padding: 10px 8px;
+  }
 .login_bg{
     background-image: url(../images/portal_bg_image.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
+.si_margin_left{
+    margin-left:auto;
+    width: 35%;
+}
+.si_btn_padding{
+    width: 270px;
+}
+.si_icons_margin_60{
+    margin-left: 50px;
+}
+.si_icons_margin_60 a i{
+    margin-left: 10px;
+    font-size:20px;
+}
+.si_btn_padding button{
+    padding: 10px 40px !important;
+}
+.si_accordian{
+    width: 95px !important;
+    border-radius: 6px !important;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.ml-left{
+    margin-left: 25px;
+}
+  
+  /* Responsive CSS */
+  
+  @media screen and (max-width: 780px) {
+    .sidebar {
+      display: none;
+    }
+  
+    #sidebar_btn {
+      display: none;
+    }
+  
+    .content {
+      margin-left: 0;
+      margin-top: 0;
+      padding: 10px 20px;
+      transition: 0s;
+    }
+  
+    #check:checked~.content {
+      margin-left: 0;
+    }
+  
+    .mobile_nav {
+      display: block;
+      width: calc(100% - 0%);
+    }
+  
+    .nav_bar {
+      background: #222;
+      width: (100% - 0px);
+      margin-top: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+  
+    .nav_bar .mobile_profile_image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  
+    .nav_bar .nav_btn {
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.5s;
+      transition-property: color;
+    }
+  
+    .nav_bar .nav_btn:hover {
+      color: #19B3D3;
+    }
+  
+    .mobile_nav_items {
+      background: #2F323A;
+      display: none;
+    }
+  
+    .mobile_nav_items a {
+      color: #fff;
+      display: block;
+      text-align: left;
+      letter-spacing: 1px;
+      line-height: 60px;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: 0.5s;
+      padding-left: 20px;
+      transition-property: background;
+    }
+  
+    .mobile_nav_items a:hover {
+      background: #19B3D3;
+    }
+  
+    .mobile_nav_items i {
+      padding-right: 10px;
+    }
+  
+    .active {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    .si_li li {
+      padding: 3px;
+      border-radius: 10px;
+    }
+  
+    .si_first_div {
+      display: grid;
+    }
+  
+    .si_pagination {
+      right: 0px;
+    }
+  
+    .si_text {
+      text-align: center;
+    }
+  
+    .si_padding {
+      padding: 20px;
+    }
+  
+    .content {
+      padding: 0px 0px;
+    }
+  
+    .list-unstyled {
+      padding-left: 0px !important;
+    }
+  
+    .nav_bar {
+      margin-top: 0px;
+    }
+  }
+
+/* admin panel css end */
 
 hr {
     margin: 1rem 0;
@@ -49258,7 +49421,7 @@ body {
     }
 
     .header-fixed.toolbar-fixed .wrapper {
-        padding-top: calc(65px + var(--kt-toolbar-height))
+        padding-top: calc(20px + var(--kt-toolbar-height))
     }
 }
 
@@ -49667,7 +49830,7 @@ body {
 }
 
 .aside-dark .menu .menu-item .menu-link .menu-title {
-    color: #9899ac
+    color: #000;
 }
 
 .aside-dark .menu .menu-item .menu-link .menu-icon, .aside-dark .menu .menu-item .menu-link .menu-icon .svg-icon, .aside-dark .menu .menu-item .menu-link .menu-icon i {
@@ -49691,12 +49854,12 @@ body {
 
 .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here), .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) {
     transition: color .2s ease, background-color .2s ease;
-    background-color: #1b1b28;
-    color: #fff
+    background-color: #cfdbea;
+    color: #000;
 }
 
 .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-title, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-title {
-    color: #fff
+    color: #000;
 }
 
 .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item.hover:not(.here)>.menu-link:not(.disabled):not(.active):not(.here) .menu-icon i, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon .svg-icon, .aside-dark .menu .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon i {
@@ -49749,12 +49912,12 @@ body {
 
 .aside-dark .menu .menu-item.show>.menu-link {
     transition: color .2s ease, background-color .2s ease;
-    background-color: #1b1b28;
+    background-color:#eff4fa;
     color: #fff
 }
 
 .aside-dark .menu .menu-item.show>.menu-link .menu-title {
-    color: #fff
+    color: #000;
 }
 
 .aside-dark .menu .menu-item.show>.menu-link .menu-icon, .aside-dark .menu .menu-item.show>.menu-link .menu-icon .svg-icon, .aside-dark .menu .menu-item.show>.menu-link .menu-icon i {
@@ -49776,14 +49939,8 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 9' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.93537 4.57889C6.03839 4.77912 6.0191 5.0363 5.87137 5.21403L2.87153 8.82282C2.68598 9.04603 2.36951 9.06026 2.16468 8.8546C1.95985 8.64893 1.94422 8.30126 2.12977 8.07804L4.80594 4.85863L2.15586 1.93583C1.96104 1.72096 1.96165 1.37314 2.15722 1.15895C2.35279 0.944757 2.66927 0.945311 2.86409 1.16018L5.85194 4.45551C5.8859 4.49296 5.91371 4.53459 5.93537 4.57889Z'/%3e%3c/svg%3e")
 }
 
-.aside-dark .menu .menu-item .menu-link.active {
-    transition: color .2s ease, background-color .2s ease;
-    background-color: #1b1b28;
-    color: #fff
-}
-
 .aside-dark .menu .menu-item .menu-link.active .menu-title {
-    color: #fff
+    color: #000;
 }
 
 .aside-dark .menu .menu-item .menu-link.active .menu-icon, .aside-dark .menu .menu-item .menu-link.active .menu-icon .svg-icon, .aside-dark .menu .menu-item .menu-link.active .menu-icon i {
