@@ -76,7 +76,7 @@
                                         <button type="submit" id="" class="d-flex btn btn-primary ">
                                             <span class="indicator-label">Submit</span>
                                         </button>
-                                        <button type="submit" id="" class="ml-5 d-flex btn btn-primary ">
+                                        <button type="submit" id="" class="ml-left d-flex btn btn-primary ">
                                             <span class="indicator-label">Reset</span>
                                         </button>
                                     </div>
