@@ -24,12 +24,10 @@
 			<div class="col-md-6 fv-row">
 				<label class="required fs-6 fw-bold mb-2">Role</label>
 				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select role" name="role">
-					<option value="">Select user...</option>
-					<option value="1">Karina Clark</option>
-					<option value="2">Robert Doe</option>
-					<option value="3">Niel Owen</option>
-					<option value="4">Olivia Wild</option>
-					<option value="5">Sean Bean</option>
+					<option value="">Select role...</option>
+					<option value="1">Team-leader</option>
+					<option value="2">Manager</option>
+					<option value="3">Agent</option>
 				</select>
 			</div>
 			<div class="col-md-6 fv-row">
@@ -46,17 +44,6 @@
 		</div>
 		<div class="row g-9 mb-8">
 			<div class="col-md-6 fv-row">
-				<label class="required fs-6 fw-bold mb-2">Accounts</label>
-				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select role" name="role">
-					<option value="">Select user...</option>
-					<option value="1">Karina Clark</option>
-					<option value="2">Robert Doe</option>
-					<option value="3">Niel Owen</option>
-					<option value="4">Olivia Wild</option>
-					<option value="5">Sean Bean</option>
-				</select>
-			</div>
-			<div class="col-md-6 fv-row">
 				<label class="required fs-6 fw-bold mb-2">Manager</label>
 				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select" name="team_leader">
 					<option value="">manager user name</option>
@@ -68,7 +55,7 @@
 		</div>
 		<div class="text-left">
 			<button type="submit" id="" class="btn btn-primary">
-				<span class="indicator-label">Created User</span>
+				<span class="indicator-label">Create User</span>
 			</button>
 		</div>
 	</form>

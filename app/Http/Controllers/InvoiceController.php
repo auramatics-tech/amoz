@@ -15,4 +15,8 @@ class InvoiceController extends Controller
     {
         return view('admin.invoices.invoice_list');
     }
+    public function announcements_list()
+    {
+        return view('admin.announcements');
+    }
 }

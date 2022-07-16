@@ -44,7 +44,7 @@
                         <span class="menu-title">Dashboards</span>
                         <span class="menu-arrow"></span>
                     </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                    <div class="menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{route('order_list')}}">
                                 <span class="menu-bullet">
@@ -62,6 +62,14 @@
                             </a>
                         </div>
                         <div class="menu-item">
+                            <a class="menu-link" href="{{route('category_list')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Categories</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
                             <a class="menu-link" href="{{route('invoice_list')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
@@ -69,12 +77,28 @@
                                 <span class="menu-title">Invoices</span>
                             </a>
                         </div>
-                        <div class="menu-item pb-5">
+                        <div class="menu-item">
                             <a class="menu-link" href="{{route('user_list')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Users</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{route('announcements_index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Announcements</span>
+                            </a>
+                        </div>
+                        <div class="menu-item pb-5">
+                            <a class="menu-link" href="{{route('manage_announcements')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Manage Announcements</span>
                             </a>
                         </div>
                         <div class="menu-item pt-5">
@@ -86,7 +110,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
+                            <a class="menu-link" href="{{route('user_profile')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -101,7 +125,7 @@
                                 <span class="menu-title">Sign out</span>
                             </a>
                         </div>
-                        <div class="menu-item">
+                        <!-- <div class="menu-item">
                             <a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
                             <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
@@ -113,7 +137,7 @@
                                 <a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a> 
                                    <a href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
                                    <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                        </div>
+                        </div> -->
                         <!-- <div class="menu-item">
                             <div class="menu-content">
                                 <a class="btn btn-flex btn-color-success fs-base p-0 ms-2 mb-2 collapsible collapsed rotate" data-bs-toggle="collapse" href="#kt_aside_menu_collapse" data-kt-toggle-text="Show Less">

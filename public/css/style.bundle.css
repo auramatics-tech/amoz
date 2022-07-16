@@ -120,6 +120,10 @@ table {
 .ml-left{
     margin-left: 20px;
 }
+input[type=radio] {
+    width: 50px;
+    height: 2rem
+}
   
   /* Responsive CSS */
   
@@ -49885,8 +49889,8 @@ body {
 
 .aside-dark .menu .menu-item.here>.menu-link {
     transition: color .2s ease, background-color .2s ease;
-    background-color: #1b1b28;
-    color: #fff
+    background-color: #cfdbea;
+    color: #000;
 }
 
 .aside-dark .menu .menu-item.here>.menu-link .menu-title {
