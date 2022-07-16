@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Order extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email','email_verified_at','password','role','status','created_at','updated_at','deleted_at'
+        'eform_id','order_no','customer_name','ic_number','address','state','postcode','email','contact_number','service_id','product','lng','lat','product_status','order_remarks','dir_name','dir_ic','created_by','updated_by','status','created_at','updated_at','deleted_at'
+        
     ];
 
     /**

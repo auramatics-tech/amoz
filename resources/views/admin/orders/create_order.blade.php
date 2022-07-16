@@ -49,7 +49,7 @@
 									<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 									<span class="required">Email</span>
 								</label>
-								<input type="text" class="form-control form-control-solid" placeholder="Enter name" name="name" />
+								<input type="email" class="form-control form-control-solid" placeholder="Enter email" name="email" />
 								</div>
 							</div>
                             <div class="row g-9 mb-8">
@@ -57,13 +57,13 @@
 									<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 									<span class="required">Contact no</span>
 								</label>
-								<input type="text" class="form-control form-control-solid" placeholder="Enter name" name="name" />
+								<input type="text" class="form-control form-control-solid" placeholder="Enter mobile number" name="name" />
 								</div>
                                 <div class="col-md-4 fv-row">
 									<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 									<span class="required">Service ID</span>
 								</label>
-								<input type="text" class="form-control form-control-solid" placeholder="Enter name" name="name" />
+								<input type="text" class="form-control form-control-solid" placeholder="Enter service id" name="name" />
 								</div>
                                 <div class="col-md-4 fv-row">
 									<label class="required fs-6 fw-bold mb-2">Product</label>
