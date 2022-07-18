@@ -16,6 +16,48 @@
             </div>
         </div>
         <div class="d-flex si_margin_left justify-content-around">
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <form action="{{route('create_order')}}" method="get">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      <h5 class="text-center">Is this residential or business?</h5>
+      <div class="d-flex justify-content-center py-5">
+        <input type="hidden" name="category" id="category_value" value="">
+        <button type="button" id="residential_button" class="btn btn-primary">
+            <span class="indicator-label">Residential</span>
+        </button>
+        <button type="button" id="business_button" class="btn btn-primary">
+            <span class="indicator-label">Business</span>
+        </button>
+
+      </div>
+      <div class="pt-10 justify-content-center">
+<h5 class="py-3 text-center">Select ISP</h5>
+<div class="d-flex flex-column mb-8">
+			<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select ISP" name="role">
+				<option value="">Select ISP</option>
+				<option value="1">Karina Clark</option>
+				<option value="2">Robert Doe</option>
+				<option value="3">Niel Owen</option>
+				<option value="4">Olivia Wild</option>
+				<option value="5">Sean Bean</option>
+			</select>
+		</div>
+      </div>
+      </div>
+      <div class="py-5 px-5">
+        <button class="btn btn-primary justiy-content-center w-100" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Create Order</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">New Order</a>
            <a href="{{route('create_order')}}"><button type="submit" id="" class="d-flex btn btn-primary ">
                 <span class="indicator-label">New Order</span>
             </button></a> 
@@ -76,7 +118,7 @@
                                         <button type="submit" id="" class="d-flex btn btn-primary ">
                                             <span class="indicator-label">Submit</span>
                                         </button>
-                                        <button type="submit" id="" class="ml-5 d-flex btn btn-primary ">
+                                        <button type="submit" id="" class="ml-left d-flex btn btn-primary ">
                                             <span class="indicator-label">Reset</span>
                                         </button>
                                     </div>
@@ -151,6 +193,17 @@
     </div>
 </main>
 @endsection
-@section('script')
-
+@section('scripts')
+<script>
+    $(document).on('click','#residential_button',function(){
+        $('#category_value').val('residential');
+        $('.category_active').removeClass('category_active');
+        $(this).addClass('category_active');
+    })
+    $(document).on('click','#business_button',function(){
+        $('#category_value').val('business');
+        $('.category_active').removeClass('category_active');
+        $(this).addClass('category_active');
+    })
+</script>
 @endsection

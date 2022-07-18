@@ -33,7 +33,7 @@ License: For each use you must have a valid license purchased only from above li
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.rtl.min.css" />
     <!--end::Fonts-->
     <!--begin::Page Vendor Stylesheets(used by this page)-->
-    <link href="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <!-- <link href="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" /> -->
     <link href="{{asset('plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     <!--end::Page Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
@@ -45,21 +45,22 @@ License: For each use you must have a valid license purchased only from above li
 <!--end::Head-->
 <!--begin::Body-->
 @auth
+
 <body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Page-->
-        <div class="page d-flex flex-row flex-column-fluid">
+        <div class="page flex-row flex-column-fluid">
             @include('admin.layouts.sidebar')
             <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 <!--begin::Header-->
                 @include('admin.layouts.header')
                 <!--end::Header-->
-				<!--begin::Content-->
+                <!--begin::Content-->
                 @yield('content')
                 <!--begin::Footer-->
-                @include('admin.layouts.footer')
+                <!-- @include('admin.layouts.footer') -->
                 <!--end::Footer-->
             </div>
             <!--end::Wrapper-->
@@ -74,7 +75,7 @@ License: For each use you must have a valid license purchased only from above li
     <script src="{{asset('js/scripts.bundle.js')}}"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Page Vendors Javascript(used by this page)-->
-    <script src="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
+    <!-- <script src="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script> -->
     <script src="{{asset('plugins/custom/datatables/datatables.bundle.js')}}"></script>
     <!--end::Page Vendors Javascript-->
     <!--begin::Page Custom Javascript(used by this page)-->
@@ -89,6 +90,7 @@ License: For each use you must have a valid license purchased only from above li
     @yield('scripts')
 </body>
 @else
+
 <body class="login_bg">
     <!--begin::Content-->
     @yield('content')

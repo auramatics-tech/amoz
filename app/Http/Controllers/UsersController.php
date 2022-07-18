@@ -58,4 +58,8 @@ class UsersController extends Controller
         $user =  User::where('id', $id)->delete();
         return redirect()->back();
     }
+    public function user_profile()
+    {
+        return view('admin.users.user_profile');
+    }
 }

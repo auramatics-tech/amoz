@@ -93,7 +93,9 @@ table {
 }
 .si_margin_left{
     margin-left:auto;
-    width: 35%;
+}
+.si_margin_left button{
+    margin-right: 10px;
 }
 .si_btn_padding{
     width: 270px;
@@ -116,7 +118,11 @@ table {
     margin-left: auto;
 }
 .ml-left{
-    margin-left: 25px;
+    margin-left: 20px;
+}
+input[type=radio] {
+    width: 50px;
+    height: 2rem
 }
   
   /* Responsive CSS */
@@ -49883,8 +49889,8 @@ body {
 
 .aside-dark .menu .menu-item.here>.menu-link {
     transition: color .2s ease, background-color .2s ease;
-    background-color: #1b1b28;
-    color: #fff
+    background-color: #cfdbea;
+    color: #000;
 }
 
 .aside-dark .menu .menu-item.here>.menu-link .menu-title {

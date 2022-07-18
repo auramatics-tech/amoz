@@ -5,6 +5,8 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\AnnouncementsController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,46 +36,7 @@ Route::get('/manager-form', function () {
 });
 Route::get('/team-leader-form', function () {
     return view('admin.users.team_leader');
-});
-Route::get('/user-form', function () {
-    return view('admin.users.user');
-});
-Route::get('/create-order-form', function () {
-    return view('admin.orders.create_order');
-});
-Route::get('/create-product-form', function () {
-    return view('admin.products.create_product');
-});
-Route::get('/edit-order-form', function () {
-    return view('admin.orders.edit_order');
-});
-Route::get('/login-form', function () {
-    return view('admin.login');
-});
-Route::get('/user-detail-form', function () {
-    return view('admin.users.user_detail');
-});
-Route::get('/create-order1-form', function () {
-    return view('admin.orders.create_order1');
-});
-Route::get('/create-order2-form', function () {
-    return view('admin.orders.create_order2');
-});
-
-Route::get('/product-list', function () {
-    return view('admin.products.product_list');
-});
-Route::get('/user-list', function () {
-    return view('admin.users.user_list');
-});
-Route::get('/order-list', function () {
-    return view('admin.orders.order_list');
-});
-Route::get('/multi-step', function () {
-    return view('admin.orders.multi_step');
-});
-
- 
+}); 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -93,3 +56,11 @@ Route::GET('/destroy_user_details/{id}', [App\Http\Controllers\UsersController::
 
 Route::get('/export-invoice', [App\Http\Controllers\InvoiceController::class, 'export_invoice'])->name('export_invoice');
 Route::get('/invoice-list', [App\Http\Controllers\InvoiceController::class, 'invoice_list'])->name('invoice_list');
+
+
+Route::get('/announcements-index', [App\Http\Controllers\AnnouncementsController::class, 'announcements_index'])->name('announcements_index');
+Route::get('/manage-announcements', [App\Http\Controllers\AnnouncementsController::class, 'manage_announcements'])->name('manage_announcements');
+
+
+Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create_category'])->name('create_category');
+Route::get('/category-list', [App\Http\Controllers\CategoryController::class, 'category_list'])->name('category_list');

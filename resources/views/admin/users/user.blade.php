@@ -80,6 +80,18 @@
 		</div>
 		<div class="text-left">
 			<button type="submit" id="myform"  class="btn btn-primary">
+			<div class="col-md-6 fv-row">
+				<label class="required fs-6 fw-bold mb-2">Manager</label>
+				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select" name="team_leader">
+					<option value="">manager user name</option>
+					<option value="1">Accounts</option>
+					<option value="2">Team leader</option>
+					<option value="3">Manager</option>
+				</select>
+			</div>
+		</div>
+		<div class="text-left">
+			<button type="submit" id="" class="btn btn-primary">
 				<span class="indicator-label">Create User</span>
 			</button>
 		</div>
