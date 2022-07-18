@@ -6,33 +6,33 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 <style>
 	@if($category == 'residential')
 	.residential{
-		display:block;
+		display:block !important;
 	}
 	.business{
-		display:none;
+		display:none !important;
 	}
 	.common{
-		display:block;
+		display:block !important;
 	}
 	@elseif($category == 'business')
 	.residential{
-			display:none;
+			display:none !important;
 		}
 	.business{
-		display:block;
+		display:block !important;
 	}
 	.common{
-		display:block;
+		display:block !important;
 	}
 	@else
 	.common{
-		display:none;
+		display:none !important;
 	}
 	.residential{
-			display:none;
+			display:none !important;
 		}
 	.business{
-		display:none;
+		display:none !important;
 	}
 	@endif
 </style>
@@ -78,7 +78,7 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 						</label>
 						<input type="text" class="form-control form-control-solid" placeholder="" name="" />
 					</div>
-					<div class="col-md-4 fv-row" style="display:none;">
+					<div class="col-md-4 fv-row">
 						<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 							<span class="required">Address</span>
 						</label>

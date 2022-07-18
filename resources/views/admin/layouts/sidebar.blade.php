@@ -118,7 +118,10 @@
                             </a>
                         </div>
                         <div class="menu-item pb-5">
-                            <a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
+                            <a class="menu-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" >
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -161,4 +164,7 @@
         <!--end::Aside Menu-->
     </div>
     <!--end::Aside menu-->
+    <!--begin::Footer-->
+  
+    <!--end::Footer-->
 </div>
