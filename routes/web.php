@@ -84,9 +84,12 @@ Route::get('/order-list', [App\Http\Controllers\OrdersController::class, 'order_
 
 Route::get('/product-list', [App\Http\Controllers\ProductsController::class, 'product_list'])->name('product_list');
 Route::get('/create-product', [App\Http\Controllers\ProductsController::class, 'create_product'])->name('create_product');
-
+//User
 Route::get('/user-list', [App\Http\Controllers\UsersController::class, 'user_list'])->name('user_list');
-Route::get('/user-details', [App\Http\Controllers\UsersController::class, 'user_details'])->name('user_details');
+Route::get('/create-user', [App\Http\Controllers\UsersController::class, 'create_user'])->name('create_user');
+Route::POST('/add_user_details', [App\Http\Controllers\UsersController::class, 'add_user_details'])->name('add_user_details');
+Route::GET('/edit-user/{id}', [App\Http\Controllers\UsersController::class, 'edit_user'])->name('edit_user');
+Route::GET('/destroy_user_details/{id}', [App\Http\Controllers\UsersController::class, 'destroy_user_details'])->name('destroy_user_details');
 
 Route::get('/export-invoice', [App\Http\Controllers\InvoiceController::class, 'export_invoice'])->name('export_invoice');
 Route::get('/invoice-list', [App\Http\Controllers\InvoiceController::class, 'invoice_list'])->name('invoice_list');
