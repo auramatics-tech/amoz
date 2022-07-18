@@ -4,7 +4,7 @@
 @section('content')
 <main class="px-10 py-10">
     <div class="d-flex justify-content-center">
-    <form action="" method="" id="" class="form p-5 bg-white w-50" action="#">
+    <form action="" method="" id="" class="form p-5 bg-white w-lg-50 w-sm-100" action="#">
         <div class="d-flex flex-column mb-8 fv-row">
             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                 <span class="required">Category name</span>

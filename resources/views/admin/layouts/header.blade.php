@@ -17,9 +17,10 @@
         <!--end::Aside mobile toggle-->
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="../../demo1/dist/index.html" class="d-lg-none">
+            <p>Portal</p>
+            <!-- <a href="../../demo1/dist/index.html" class="d-lg-none">
                 <img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-30px" />
-            </a>
+            </a> -->
         </div>
         <!--end::Mobile logo-->
         <!--begin::Wrapper-->

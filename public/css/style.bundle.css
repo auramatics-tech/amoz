@@ -127,11 +127,28 @@ input[type=radio] {
 .main-bg-color{
     background-color: #eaeff5;
 }
-/* .table-responsive{
-display: block;
-} */
 
-
+@media (max-width:1024px){
+    .table-responsive{
+        display: block;
+        }
+        .si_btn_padding button {
+            padding: 10px 22px !important;
+        }
+}
+@media (max-width:1024px){
+    .si_announce{
+        display: grid !important;
+    }
+    .si_announce h1
+    {
+        text-align: center;
+    }
+    .si_announce p
+    {
+        text-align: center;
+    }
+}
 
 
 

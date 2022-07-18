@@ -18,9 +18,9 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 	.residential{
 			display:none !important;
 		}
-	.business{
+	/* .business{
 		display:block !important;
-	}
+	} */
 	.common{
 		display:block !important;
 	}
@@ -78,7 +78,7 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 						</label>
 						<input type="text" class="form-control form-control-solid" placeholder="" name="" />
 					</div>
-					<div class="col-md-4 fv-row">
+					<div class="col-md-4 fv-row" style="display:none;">
 						<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 							<span class="required">Address</span>
 						</label>
@@ -115,7 +115,7 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 						</label>
 						<input type="text" class="form-control form-control-solid" placeholder="" name="" />
 					</div>
-					<div class="col-md-4 fv-row">
+					<div class="col-md-4 fv-row" style="display: none;">
 						<label class="required fs-6 fw-bold mb-2">Product</label>
 						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select" name="team_leader">
 							<option value="">Select product...</option>
@@ -133,7 +133,7 @@ $category = isset($_GET['category'])?$_GET['category']:'';
 					</label>
 					<textarea name="" id="" cols="" rows="6" class="w-100 form-control form-control-solid"></textarea>
 				</div>
-				<div class="row g-9 mb-8 business d-flex">
+				<div class="row g-9 mb-8 business">
 					<div class="col-md-4 fv-row">
 						<label class="d-flex align-items-center fs-6 fw-bold mb-2">
 							<span class="required">Address</span>

@@ -4,7 +4,7 @@
             <h1 class="py-6 ">Announcements</h1>
             <div class="py-8">
             <div class="bg-white px-5 p-10">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between si_announce">
                 <h1 class="text-primary py-4">New product coming out 2023</h1>
                 <p>Date and Time</p>
                 </div>
