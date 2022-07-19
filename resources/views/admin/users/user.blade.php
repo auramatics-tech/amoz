@@ -32,7 +32,7 @@
 		<div class="row g-9 mb-8">
 			<div class="col-md-6 fv-row">
 				<label class="required fs-6 fw-bold mb-2">Role</label>
-				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select role" name="role[]" id="role">
+				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select role" name="role" id="role">
 					<option value="">Select Role...</option>
 					@if(count($roles))
 					@foreach($roles as $role)

@@ -52,31 +52,42 @@
                     <th class="min-w-125px">S.no </th>
                     <th class="min-w-125px">Product</th>
                     <th class="min-w-125px">Price</th>
+                    <th class="min-w-125px">Category</th>
                     <th class="min-w-125px">Remarks</th>
                     <th class="min-w-125px">Status</th>
                     <th class="min-w-125px">Actions</th>
                 </tr>
             </thead>
             <tbody class="fw-bold text-dark-600 text-center">
+                @if(count($products))
+                @foreach($products as $key => $product)
                 <tr>
                     <td class="w-10px pe-4">
                         <div class="form-check form-check-sm form-check-custom form-check-solid">
                             <input class="form-check-input" type="checkbox" value="1" />
                         </div>
                     </td>
-                    <td class="text-center">1</td>
+                    <td class="text-center">{{++$key}}</td>
                     <td class="text-center">
-                        unifi 100 mbps
+                        {{$product->pro_name}}
                     </td>
                     <td class="text-center">
-                        100/-
+                        {{$product->pro_price}}
                     </td>
                     <td class="text-center">
-                        20%
+                        {{isset($product->get_category->cat_name) ? $product->get_category->cat_name: ''}}
                     </td>
                     <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
+                        {{$product->remarks}}
                     </td>
+                    <td class="text-center">
+                        <div class="badge badge-light-success">
+                            @if($product->status == 1)
+                            Active
+                            @else
+                            Inactive
+                            @endif
+                        </div>
                     <td class="text-center pe-4">
                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                             <span class="svg-icon svg-icon-5 m-0">
@@ -87,200 +98,16 @@
                         </a>
                         <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
                             <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
+                                <a href="{{route('edit_product',$product->id)}}" class="menu-link px-3">Edit</a>
                             </div>
                             <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
+                                <a href="{{route('destroy_product_details',$product->id)}}" class="menu-link px-3 show_confirm" data-kt-customer-table-filter="delete_row">Delete</a>
                             </div>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td class="w-10px pe-4">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
-                    </td>
-                    <td class="text-center">2</td>
-                    <td class="text-center">
-                        unifi 100 mbps
-                    </td>
-                    <td class="text-center">
-                        100/-
-                    </td>
-                    <td class="text-center">
-                        20%
-                    </td>
-                    <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
-                    </td>
-                    <td class="text-center pe-4">
-                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                            <span class="svg-icon svg-icon-5 m-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                            <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                            </div>
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="w-10px pe-4">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
-                    </td>
-                    <td class="text-center">3</td>
-                    <td class="text-center">
-                        unifi 100 mbps
-                    </td>
-                    <td class="text-center">
-                        100/-
-                    </td>
-                    <td class="text-center">
-                        20%
-                    </td>
-                    <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
-                    </td>
-                    <td class="text-center pe-4">
-                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                            <span class="svg-icon svg-icon-5 m-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                            <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                            </div>
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="w-10px pe-4">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
-                    </td>
-                    <td class="text-center">4</td>
-                    <td class="text-center">
-                        unifi 100 mbps
-                    </td>
-                    <td class="text-center">
-                        100/-
-                    </td>
-                    <td class="text-center">
-                        20%
-                    </td>
-                    <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
-                    </td>
-                    <td class="text-center pe-4">
-                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                            <span class="svg-icon svg-icon-5 m-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                            <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                            </div>
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="w-10px pe-4">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
-                    </td>
-                    <td class="text-center">5</td>
-                    <td class="text-center">
-                        unifi 100 mbps
-                    </td>
-                    <td class="text-center">
-                        100/-
-                    </td>
-                    <td class="text-center">
-                        20%
-                    </td>
-                    <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
-                    </td>
-                    <td class="text-center pe-4">
-                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                            <span class="svg-icon svg-icon-5 m-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                            <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                            </div>
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="w-10px pe-4">
-                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                            <input class="form-check-input" type="checkbox" value="1" />
-                        </div>
-                    </td>
-                    <td class="text-center">6</td>
-                    <td class="text-center">
-                        unifi 100 mbps
-                    </td>
-                    <td class="text-center">
-                        100/-
-                    </td>
-                    <td class="text-center">
-                        20%
-                    </td>
-                    <td class="text-center">
-                        <div class="badge badge-light-danger">Active</div>
-                    </td>
-                    <td class="text-center pe-4">
-                        <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
-                            <span class="svg-icon svg-icon-5 m-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                </svg>
-                            </span>
-                        </a>
-                        <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                            <div class="menu-item px-3">
-                                <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
-                            </div>
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3" data-kt-customer-table-filter="delete_row">Delete</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
+                @endforeach
+                @endif
             </tbody>
         </table>
     </div>
@@ -291,22 +118,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script type="text/javascript">
- 
-     $('.show_confirm').click(function() {
-         
-          swal({
-              title: `Are you sure you want to delete this record?`,
-              text: "If you delete this, it will be gone forever.",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-             submit();
-            }
-          });
-      });
-  
+    $('.show_confirm').click(function() {
+
+        swal({
+                title: `Are you sure you want to delete this record?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    submit();
+                }
+            });
+    });
+    
 </script>
 @endsection

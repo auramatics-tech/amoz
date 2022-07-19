@@ -29,9 +29,9 @@
             <div class="d-flex flex-column mb-8 fv-row">
                 <label class="required fs-6 fw-bold mb-2">Category</label>
                 <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select category" name="category">
-                <option value="">Select Role...</option>
-					@if(count($category))
-					@foreach($category as $category)
+
+					@if(count($categories))
+					@foreach($categories as $category)
 					<option @if(isset($product->$category) && $product->$category == $category->id) selected @endif value="{{$category->id}}">{{$category->cat_name}}</option>
 					@endforeach
 					@endif
@@ -44,7 +44,7 @@
                 <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                     <span class="required">Remarks</span>
                 </label>
-                <textarea name="remarks" id="" cols="" rows="10" class="w-100 form-control form-control-solid" value="{{ isset($product->remarks) ? $product->remarks :'' }}"></textarea>
+                <textarea name="remarks" id="remarks" cols="" rows="10" class="w-100 form-control form-control-solid" >{{ isset($product->remarks) ? $product->remarks :'' }}</textarea>
             </div>
             <div class="d-flex justify-content-between">
                 <button type="submit" id="" class="btn btn-primary">

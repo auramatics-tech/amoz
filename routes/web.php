@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\AnnouncementsController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,8 +81,8 @@ Route::get('/user-list', [App\Http\Controllers\UsersController::class, 'user_lis
 Route::get('/user-details', [App\Http\Controllers\UsersController::class, 'user_details'])->name('user_details');
 Route::get('/user-profile', [App\Http\Controllers\UsersController::class, 'user_profile'])->name('user_profile');
 
-Route::get('/export-invoice', [App\Http\Controllers\InvoiceController::class, 'export_invoice'])->name('export_invoice');
-Route::get('/invoice-list', [App\Http\Controllers\InvoiceController::class, 'invoice_list'])->name('invoice_list');
+Route::get('/export-invoice', [App\Http\Controllers\InvoicesController::class, 'export_invoice'])->name('export_invoice');
+Route::get('/invoice-list', [App\Http\Controllers\InvoicesController::class, 'invoice_list'])->name('invoice_list');
 
 
 Route::get('/announcements-index', [App\Http\Controllers\AnnouncementsController::class, 'announcements_index'])->name('announcements_index');
