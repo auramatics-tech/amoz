@@ -63,7 +63,7 @@
                     {{$category->cat_name}}
                     </td>
                     <td class="text-center">
-                        <div class="badge badge-light-danger">
+                        <div class="badge badge-light-success">
                             @if($category->status == 1)
                             Active
                             @else
@@ -81,10 +81,10 @@
                         </a>
                         <div class=" text-center menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
                             <div class="menu-item px-3">
-                            <a href="{{route('edit_category',$category->id)}}">View</a>
+                            <a href="{{route('edit_category',$category->id)}}" class="menu-link px-3">Edit</a>
                             </div>
                             <div class="menu-item px-3">
-                            <a href="{{route('destroy_category',$category->id)}}">Delete</a>
+                            <a href="{{route('destroy_category',$category->id)}}" class="menu-link px-3">Delete</a>
                             </div>
                         </div>
                     </td>
@@ -95,7 +95,6 @@
         </table>
     </div>
 </main>
-
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

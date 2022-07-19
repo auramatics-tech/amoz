@@ -17,7 +17,7 @@ class ProductsController extends Controller
     }
     public function product_list()
     {
-        
+            $categories= Category::where('status', 1)->orderBy('id', 'ASC')->get();
             $products= Product::where('status', 1)->orderBy('id', 'ASC')->get();
             return view('admin.products.product_list', compact('products'));
         }
@@ -25,9 +25,9 @@ class ProductsController extends Controller
     public function create_product()
     {
       
-        $category= Category::where('status', 1)->orderBy('id', 'ASC')->get();
+        $categories= Category::where('status', 1)->orderBy('id', 'ASC')->get();
         $product= Product::where('status', 1)->orderBy('id', 'ASC')->get();
-        return view('admin.products.create_product',compact('product','category'));
+        return view('admin.products.create_product',compact('product','categories'));
     }
     public function add_product_details(Request $request)
     {
@@ -52,9 +52,9 @@ class ProductsController extends Controller
     public function  edit_product($id)
     {
         
-        $category= Category::where('status', 1)->orderBy('id', 'ASC')->get();
+        $categories= Category::where('status', 1)->orderBy('id', 'ASC')->get();
         $product = Product::Find($id);
-        return view('admin.products.create_product', compact('product', 'category'));
+        return view('admin.products.create_product', compact('product', 'categories'));
     }
     public function  destroy_product_details($id)
     {
