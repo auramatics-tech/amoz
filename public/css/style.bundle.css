@@ -49604,7 +49604,7 @@ body {
     }
 
     .header-fixed.toolbar-fixed .wrapper {
-        padding-top: calc(20px + var(--kt-toolbar-height))
+        padding-top: calc(10px + var(--kt-toolbar-height))
     }
 }
 
