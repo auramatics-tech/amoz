@@ -2,8 +2,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="../../demo1/dist/index.html">
-            <!-- <img alt="Logo" src="assets/media/logos/logo-1-dark.svg" class="h-25px logo" /> -->
+        <a href="{{url('dashboard')}}">
             <h1 class="h-25px logo" >PORTAL</h1>
         </a>
         <!--end::Logo-->
@@ -28,22 +27,14 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
                 <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
-                            <span class="svg-icon svg-icon-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor" />
-                                    <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor" />
-                                    <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor" />
-                                    <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </span>
+                <div class="menu-item">
+            <a href="{{url('dashboard')}}"><span class="menu-link">
+                    <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
                         <span class="menu-title">Dashboards</span>
-                        <span class="menu-arrow"></span>
-                    </span>
+                    </span></a>    
+                </div>
                     <div class="menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{route('order_list')}}">
