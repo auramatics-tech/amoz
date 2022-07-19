@@ -17,16 +17,20 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Manager</th>
+                    <th>Team Leader</th>
                     <th>Action</th>
                 </tr>
             </th>
             <tbody>
-                @foreach($user as $user)
+                @foreach($users as $user)
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->get_role->name}}</td>
+                    <td>{{isset($user->get_manager->name) ? $user->get_manager->name: ''}}</td>
+                    <td>{{isset($user->get_team_leader->name) ? $user->get_team_leader->name : ''}}</td>
                     <td>
                 <a href="{{route('edit_user',$user->id)}}"><button type="submit" id="" class="btn btn-success">
                 <span class="indicator-label">Edit</span>
@@ -44,14 +48,12 @@
 
 @endsection
 @section('scripts')
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script type="text/javascript">
  
-     $('.show_confirm').click(function(event) {
-          var form =  $(this).closest("form");
-          var name = $(this).data("name");
-          event.preventDefault();
+     $('.show_confirm').click(function() {
+         
           swal({
               title: `Are you sure you want to delete this record?`,
               text: "If you delete this, it will be gone forever.",
@@ -61,7 +63,7 @@
           })
           .then((willDelete) => {
             if (willDelete) {
-              form.submit();
+             submit();
             }
           });
       });

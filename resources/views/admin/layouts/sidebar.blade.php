@@ -62,7 +62,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('category_list')}}">
+                            <a class="menu-link" href="{{route('admin.category_list')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

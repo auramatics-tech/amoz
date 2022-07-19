@@ -1,18 +1,21 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use App\models\User;
+use DB;
+use Hash;
 
 
 class UsersController extends Controller
 {
     public function user_list()
     {
-        $user = User::where('status', 1)->orderBy('id', 'ASC')->get();
-        return view('admin.users.user_list', compact('user'));
+        $users = User::where('status', 1)->orderBy('id', 'ASC')->get();
+        return view('admin.users.user_list', compact('users'));
     }
     public function create_user()
     {

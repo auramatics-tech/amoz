@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +18,7 @@ class Product extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'pro_name', 'pro_price', 'password','remarks','created_by','updated_by','status','created_at','updated_at','deleted_at'
+        'pro_name', 'pro_price', 'category','remarks','created_by','updated_by','status','created_at','updated_at','deleted_at'
     ];
 
     /**
@@ -39,4 +39,8 @@ class Product extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function get_category()
+    {
+         return $this->hasOne(Category::class,'id','category');
+     }
 }
