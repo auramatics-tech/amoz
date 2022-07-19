@@ -3,8 +3,8 @@
 @endsection
 @section('content')
 <main class="px-10 py-10">
-    <div class="d-flex justify-content-center">
-    <form action="{{ route('add_category_details')}}" method="POST" id="catform" class="form p-5 bg-white w-50">
+    <div class="">
+    <form action="{{ route('add_category_details')}}" method="POST" id="catform" class="form p-5 bg-white">
     @csrf
     <input type="hidden" name="id" value="{{ isset($categories->id) ? $categories->id : ''}}">
         <div class="d-flex flex-column mb-8 fv-row">

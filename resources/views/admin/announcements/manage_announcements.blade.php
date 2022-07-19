@@ -3,8 +3,11 @@
 @endsection
 @section('content')
 <main class="px-10 py-10">
-    <div class="mb-10 mt-5 text-left d-flex justify-content-between">
+<div class="mb-10 mt-5 text-left d-flex justify-content-between">
         <h1 class="mb-3">Announcements</h1>
+        <a href=""><button type="submit" id="" class="btn btn-primary">
+                <span class="indicator-label">Addt</span>
+            </button></a>
     </div>
     <div class="form p-5 bg-white rounded card-body pt-0">
         <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" id="kt_customers_table">
