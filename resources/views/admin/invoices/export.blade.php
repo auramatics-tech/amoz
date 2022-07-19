@@ -3,10 +3,10 @@
 @endsection
 @section('content')
 <main class="px-10 py-10">
-     <div class="p-5 px-20 bg-white">
-          <h1 class="py-4">
+<h1 class="py-4">
                Export
           </h1>
+     <div class="p-5 px-10 bg-white">
           <div class=" pt-5 d-flex pb-10">
                <h5 class="mt-1">Include</h5>
                <div class="si_icons_margin_60">
