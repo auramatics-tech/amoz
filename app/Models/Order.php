@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class Order extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email','email_verified_at','password','role','manager','team_leader','status','created_at','updated_at','deleted_at'
+        'eform_id','order_no','customer_name','ic_number','address','state','postcode','email','contact_number','service_id','product','lng','lat','product_status','order_remarks','dir_name','dir_ic','created_by','updated_by','status','created_at','updated_at','deleted_at'
+        
     ];
 
     /**
@@ -40,16 +40,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function get_role()
-    {
-         return $this->hasOne(Role::class,'id','role');
-     }
-     public function get_manager()
-    {
-         return $this->hasOne(User::class,'id','manager');
-     }
-     public function get_team_leader()
-    {
-         return $this->hasOne(User::class,'id','team_leader');
-     }
 }

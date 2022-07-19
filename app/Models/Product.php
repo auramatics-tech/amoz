@@ -8,8 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-class User extends Authenticatable
+class Product extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable,SoftDeletes;
 
@@ -19,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email','email_verified_at','password','role','manager','team_leader','status','created_at','updated_at','deleted_at'
+        'pro_name', 'pro_price', 'category','remarks','created_by','updated_by','status','created_at','updated_at','deleted_at'
     ];
 
     /**
@@ -40,16 +39,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function get_role()
+    public function get_category()
     {
-         return $this->hasOne(Role::class,'id','role');
-     }
-     public function get_manager()
-    {
-         return $this->hasOne(User::class,'id','manager');
-     }
-     public function get_team_leader()
-    {
-         return $this->hasOne(User::class,'id','team_leader');
+         return $this->hasOne(Category::class,'id','category');
      }
 }

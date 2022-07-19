@@ -18,10 +18,13 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
 
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::group(['middleware' => 'auth'], function () { 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
@@ -37,7 +40,10 @@ Route::get('/manager-form', function () {
 Route::get('/team-leader-form', function () {
     return view('admin.users.team_leader');
 }); 
-Auth::routes();
+
+
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -45,9 +51,31 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/create-order', [App\Http\Controllers\OrdersController::class, 'create_order'])->name('create_order');
 Route::get('/order-list', [App\Http\Controllers\OrdersController::class, 'order_list'])->name('order_list');
 
-Route::get('/product-list', [App\Http\Controllers\ProductsController::class, 'product_list'])->name('product_list');
-Route::get('/create-product', [App\Http\Controllers\ProductsController::class, 'create_product'])->name('create_product');
-Route::get('/create-category', [App\Http\Controllers\ProductsController::class, 'create_category'])->name('create_category');
+
+//User
+Route::get('/user-list', [App\Http\Controllers\UsersController::class, 'user_list'])->name('user_list');
+Route::get('/create-user', [App\Http\Controllers\UsersController::class, 'create_user'])->name('create_user');
+Route::POST('/add_user_details', [App\Http\Controllers\UsersController::class, 'add_user_details'])->name('add_user_details');
+Route::GET('/edit-user/{id}', [App\Http\Controllers\UsersController::class, 'edit_user'])->name('edit_user');
+Route::GET('/destroy_user_details/{id}', [App\Http\Controllers\UsersController::class, 'destroy_user_details'])->name('destroy_user_details');
+
+//Category
+
+Route::GET('/create-category', [App\Http\Controllers\CategoriesController::class, 'create_category'])->name('create_category');
+Route::POST('/add_category_details', [App\Http\Controllers\CategoriesController::class, 'add_category_details'])->name('add_category_details');
+Route::GET('/category-list', [App\Http\Controllers\CategoriesController::class, 'category_list'])->name('admin.category_list');
+Route::GET('/edit_category/{id}', [App\Http\Controllers\CategoriesController::class, 'edit_category'])->name('edit_category');
+Route::GET('/destroy_category/{id}', [App\Http\Controllers\CategoriesController::class, 'destroy_category'])->name('destroy_category');
+
+//Product
+Route::GET('/product_list', [App\Http\Controllers\ProductsController::class, 'product_list'])->name('product_list');
+Route::GET('/create-product', [App\Http\Controllers\ProductsController::class, 'create_product'])->name('create_product');
+Route::POST('/add_product_details', [App\Http\Controllers\ProductsController::class, 'add_product_details'])->name('add_product_details');
+Route::GET('/edit_product/{id}', [App\Http\Controllers\ProductsController::class, 'edit_product'])->name('edit_product');
+Route::GET('/destroy_product_details/{id}', [App\Http\Controllers\ProductsController::class, 'destroy_product_details'])->name('destroy_product_details');
+
+
+
 
 Route::get('/user-list', [App\Http\Controllers\UsersController::class, 'user_list'])->name('user_list');
 Route::get('/user-details', [App\Http\Controllers\UsersController::class, 'user_details'])->name('user_details');
@@ -61,5 +89,7 @@ Route::get('/announcements-index', [App\Http\Controllers\AnnouncementsController
 Route::get('/manage-announcements', [App\Http\Controllers\AnnouncementsController::class, 'manage_announcements'])->name('manage_announcements');
 
 
-Route::get('/create-category', [App\Http\Controllers\CategoryController::class, 'create_category'])->name('create_category');
-Route::get('/category-list', [App\Http\Controllers\CategoryController::class, 'category_list'])->name('category_list');
+
+
+
+});

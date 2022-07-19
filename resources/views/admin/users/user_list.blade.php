@@ -5,42 +5,43 @@
 <main class="px-10 py-10">
     <div class="mb-10 mt-2 d-flex justify-content-between">
         <h1 class="mt-3">User Overview</h1>
-        <a href="{{route('user_details')}}"><button type="submit" id="" class="d-flex btn btn-primary ml-auto">
+        <a href="{{route('create_user')}}"><button type="submit" id="" class="d-flex btn btn-primary ml-auto">
                 <span class="indicator-label">Add User</span>
             </button></a>
     </div>
     <!-- <div class="form p-5 bg-white rounded">
         <table>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-            </tr>
-            <tr>
-                <td>simi</td>
-                <td>simi@gmail.com</td>
-                <td>admin</td>
-            </tr>
-            <tr>
-                <td>pllu</td>
-                <td>sisdafsi@gmail.com</td>
-                <td>agent</td>
-            </tr>
-            <tr>
-                <td>ram</td>
-                <td>sadad@gmail.com</td>
-                <td>accounts</td>
-            </tr>
-            <tr>
-                <td>sham</td>
-                <td>hjkj@gmail.com</td>
-                <td>manager</td>
-            </tr>
-            <tr>
-                <td>dsagdh</td>
-                <td>ouyut@gmail.com</td>
-                <td>agent</td>
-            </tr>
+            <th>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Manager</th>
+                    <th>Team Leader</th>
+                    <th>Action</th>
+                </tr>
+            </th>
+            <tbody>
+                @foreach($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->get_role->name}}</td>
+                    <td>{{isset($user->get_manager->name) ? $user->get_manager->name: ''}}</td>
+                    <td>{{isset($user->get_team_leader->name) ? $user->get_team_leader->name : ''}}</td>
+                    <td>
+                <a href="{{route('edit_user',$user->id)}}"><button type="submit" id="" class="btn btn-success">
+                <span class="indicator-label">Edit</span>
+            </button></a>
+            <a href="{{route('destroy_user_details',$user->id)}}"><button type="submit" id="" class="btn btn-danger show_confirm">
+                <span class="indicator-label">Delete</span>
+            </button></a>
+</td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
     </div> -->
     <div class="form p-5 bg-white rounded card-body pt-0">
@@ -236,5 +237,26 @@
 </main>
 
 @endsection
-@section('script')
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function() {
+         
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+             submit();
+            }
+          });
+      });
+  
+</script>
 @endsection
